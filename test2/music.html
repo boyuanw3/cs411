@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/music.css">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+
+    <title>Music</title>
+</head>
+<body>
+
+    <div class="navigation">
+
+        <div class="logo">WikiMusic</div>
+
+        <nav>
+
+            <ul class="textbox">
+                <li><a href="/">Home</a></li>
+                <li><a href="/music"><b>Music</b></a></li>
+                <li><a href="/genre">Genre</a></li>
+                <li><a href="/singer">Singer</a></li>
+                <li><a href="/search">Search</a></li>
+                <li><a href="/profile">Profile</a></li>
+            </ul>
+
+        </nav>
+            
+        
+    </div>
+
+    <div class="title">Music</div>
+
+    <div class="add">
+        <!-- <button>Add</button> -->
+        <div class="add_container">
+            <input type="text" class="add_name" placeholder="Name">
+            <input type="number" class="add_year" placeholder="Year">
+            <input type="text" class="add_genre" placeholder="Genre">
+            <input type="text" class="add_singer" placeholder="Singer">
+            <input type="text" class="add_language" placeholder="Language">
+            <button class="add_btn"><i class="ion-ios-checkmark-outline"></i></button>
+        </div>
+    </div>
+
+    <div class="bottom">
+
+        <div class="music">
+            <div class="music-name">Name</div>
+            <div class="music-year">Year</div>
+            <div class="music-genre">Genre</div>
+            <div class="music-singer">Singer</div>
+            <div class="music-language">Language</div>
+            <div class="music-rating">Average Rating</div>
+            <div class="music-recommendation">Recommendations</div>
+        </div>
+
+        <div class="container">
+
+            <div class="list" id="item-0">
+                <div class="item-name clearfix">Boom</div>
+                <div class="item-year clearfix">2019</div>
+                <div class="item-genre clearfix">Hip-Hop</div>
+                <div class="item-singer clearfix">NCT Dream</div>
+                <div class="item-language clearfix">Korean</div>
+                <div class="item-rating clearfix">5.00</div>
+                <div class="item-recommendation clearfix">Kick it, Boss</div>
+            </div>
+
+            <div class="list" id="item-0">
+                <div class="item-name clearfix">Holiday</div>
+                <div class="item-year clearfix">2017</div>
+                <div class="item-genre clearfix">Pop</div>
+                <div class="item-singer clearfix">Girl's Generation</div>
+                <div class="item-language clearfix">Korean</div>
+                <div class="item-rating clearfix">5.00</div>
+                <div class="item-recommendation clearfix">Lion Heart, All Night</div>
+            </div>
+
+            
+
+        </div>
+
+    </div>
+
+    <script src="./js/music.js"></script>
+    <script type="text/javascript" src="./data/music"></script>
+</body>
+</html>
