@@ -82,10 +82,10 @@ var UIController = (function() {
 
                         html = html.replace('%name%', element.Song_Name);
                         html = html.replace('%year%', element.Year);
-                        html = html.replace('%genre%', element.Genre);
+                        html = html.replace('%genre%', element.Genre_Id);
                         html = html.replace('%singer%', element.Singer_Id);
                         html = html.replace('%language%', element.Language);
-                        html = html.replace('%avgRating%', element.Ave_Rating);
+                        html = html.replace('%avgRating%', element.Avg_Rating);
                         html = html.replace('%recommendation%', element.Recommendations);
 
                         document.querySelector(DOMStrings.container).insertAdjacentHTML('beforeend', html);

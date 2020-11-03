@@ -8,8 +8,8 @@ const fs = require('fs');
 const mysqlConnection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "804154945pyPY^^",
-    database: "WikiMusic",
+    password: "password",
+    database: "Music",
     multipleStatements:true
 })
 
@@ -28,6 +28,15 @@ mysqlConnection.query('SELECT * FROM Song', (err, data) => {
         let dataToStore = JSON.stringify(data);
         fs.writeFileSync('./data/music.json', dataToStore);
     }
+})
+
+mysqlConnection.query('SELECT * FROM Genre', (err, data) => {
+  if (err) {
+      console.error(err);
+  } else {
+      let dataToStore = JSON.stringify(data);
+      fs.writeFileSync('./data/genre.json', dataToStore);
+  }
 })
 
 mysqlConnection.end();
@@ -67,6 +76,9 @@ app.get("/data/music", function (req, res) {
   res.sendFile(__dirname + "/data/music.json");
 })
 
+app.get("/data/genre", function (req, res) {
+  res.sendFile(__dirname + "/data/genre.json");
+})
 
 // start your server
 app.listen(3000, () => console.log('Server started at port 3000'))
