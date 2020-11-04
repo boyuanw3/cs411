@@ -11,23 +11,22 @@ var UIController = (function() {
     };
 
     return {
+        getDOMStrings: function () {
+            return DOMStrings;
+        },
 
 
         show: function () {
-            fetch('/data/music')
+            fetch('/data/singer')
                 .then(response => response.json())
                 .then(data => {
                     data.forEach(element => {
                         var html;
-                        html = '<div class="list" id="---"><div class="item-name clearfix">%name%</div><div class="item-year clearfix">%year%</div><div class="item-genre clearfix">%genre%</div><div class="item-singer clearfix">%singer%</div><div class="item-language clearfix">%album%</div><div class="item-rating clearfix">%avgRating%</div><div class="item-recommendation clearfix">%recommendation%</div></div>';
+                        html = '<div class="list" id="item-0"><div class="singer-name">%name%</div><div class="singer-gender">%gender%</div><div class="singer-year">%year%</div></div>';
 
-                        html = html.replace('%name%', element.Song_Name);
-                        html = html.replace('%year%', element.Year);
-                        html = html.replace('%genre%', element.Genre_Name);
-                        html = html.replace('%singer%', element.Singer_Name);
-                        html = html.replace('%album%', element.Album_Name);
-                        html = html.replace('%avgRating%', element.Avg_Rating);
-                        html = html.replace('%recommendation%', element.Recommendations);
+                        html = html.replace('%name%', element.Singer_Name);
+                        html = html.replace('%gender%', element.Gender);
+                        html = html.replace('%year%', element.Debut_Year);
 
                         document.querySelector(DOMStrings.container).insertAdjacentHTML('beforeend', html);
 
@@ -41,9 +40,7 @@ var UIController = (function() {
 
 var controller = (function (UICtrl) {
 
-
     var showDatabase = function () {
-
         UICtrl.show();
 
     }

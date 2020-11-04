@@ -74,7 +74,7 @@ nav li {
     
 }
 
-.genre {
+.album {
     font-size: 25px;
     display: flex;
     /* justify-content: space-between; */
@@ -86,7 +86,7 @@ nav li {
 
 }
 
-.genre>div {
+.album>div {
     width: 275px;
     text-decoration: underline;
     text-align: center;

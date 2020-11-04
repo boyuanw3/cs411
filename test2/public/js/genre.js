@@ -1,26 +1,3 @@
-// const { response } = require("express");
-
-var dataController = (function(){
-
-    // read data from music file
-    // var dataResult;
-    // fetch('/data/music')
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         console.log(data[0])
-    //     })
-    // console.log(data);
-    
-
-
-    // return {
-    //     getData: function () {
-            
-    //     }
-    // }
-
-})();
-
 var UIController = (function() {
 
     var DOMStrings = {
@@ -94,7 +71,7 @@ var UIController = (function() {
 
 })();
 
-var controller = (function (dataCtrl, UICtrl) {
+var controller = (function (UICtrl) {
 
     // var setupEventListeners = function () {
     //     var DOM = UICtrl.getDOMStrings();
@@ -123,13 +100,12 @@ var controller = (function (dataCtrl, UICtrl) {
     // }
 
     var showDatabase = function () {
-        var data;
 
         // obtain database result from datacontroller
         // data = dataCtrl.getData();
         // console.log(data);
         // show database result in UI
-        UICtrl.show(data);
+        UICtrl.show();
 
     }
 
@@ -143,6 +119,6 @@ var controller = (function (dataCtrl, UICtrl) {
 
     
 
-})(dataController, UIController);
+})(UIController);
 
 controller.init();
