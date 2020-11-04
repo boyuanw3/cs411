@@ -106,6 +106,7 @@ CREATE TABLE `Song` (
   `Song_Name` varchar(255) NOT NULL,
   `Year` int DEFAULT NULL,
   `Singer_Id` int NOT NULL,
+  `Album_Id` int DEFAULT NULL,
   `Genre_Id` int DEFAULT NULL,
   `Avg_Rating` double DEFAULT NULL,
   `Recommendations` varchar(255) DEFAULT NULL,
@@ -119,7 +120,7 @@ CREATE TABLE `Song` (
 
 LOCK TABLES `Song` WRITE;
 /*!40000 ALTER TABLE `Song` DISABLE KEYS */;
-INSERT INTO `Song` VALUES (1,'Love Story',2008,1,1,NULL,NULL),(2,'Baby',2010,2,2,NULL,NULL),(3,'Deserve',2017,3,3,NULL,NULL),(4,'We Will Rock You',1977,4,4,NULL,NULL),(5,'Blank Space',2014,1,2,NULL,NULL),(6,'What Do You Mean',2015,2,2,NULL,NULL),(7,'Let Me Love You',2016,2,2,NULL,NULL),(8,'Red',2012,1,1,NULL,NULL),(9,'Shake It Off',2014,1,2,NULL,NULL),(10,'Someone Like You',2011,7,2,NULL,NULL),(11,'Power is Power',2019,3,2,NULL,NULL),(12,'Go Off',2017,3,3,NULL,NULL),(13,'Faded',2015,5,5,NULL,NULL),(14,'Rolling in the Deep',2011,7,2,NULL,NULL),(15,'We Are the Champions',2001,4,4,NULL,NULL),(16,'How You Like That',2020,8,3,NULL,NULL),(17,'Fantastic Baby',2012,9,2,NULL,NULL),(18,'Hello',2015,7,2,NULL,NULL),(19,'Skyfall',2012,7,2,NULL,NULL),(20,'Poker Face',2008,6,2,NULL,NULL),(21,'The Spectre',2017,5,5,NULL,NULL),(22,'Lovesick Girls',2020,8,5,NULL,NULL),(23,'Bad Girl',2015,10,2,NULL,NULL),(24,'Yeah',1995,4,4,NULL,NULL),(25,'Lost Control',2018,5,2,NULL,NULL),(26,'Bad Romance',2009,6,2,NULL,NULL),(27,'Pretty Savage',2020,8,5,NULL,NULL),(28,'Loser',2015,9,3,NULL,NULL),(29,'Sober',2015,9,3,NULL,NULL),(30,'July',2016,10,6,NULL,NULL),(31,'Kill This Love',2019,8,3,NULL,NULL),(32,'Juice',2017,10,3,NULL,NULL),(33,'Coupe',2018,10,3,NULL,NULL),(34,'Bang Bang Bang',2015,9,3,NULL,NULL),(35,'Telephone',2009,6,2,NULL,NULL);
+INSERT INTO `Song` VALUES (1,'Love Story',2008,1,1,1,NULL,NULL),(2,'Baby',2010,2,2,2,NULL,NULL),(3,'Deserve',2017,3,3,3,NULL,NULL),(4,'We Will Rock You',1977,4,4,4,NULL,NULL),(5,'Blank Space',2014,1,5,2,NULL,NULL),(6,'What Do You Mean',2015,2,6,2,NULL,NULL),(7,'Let Me Love You',2016,2,7,2,NULL,NULL),(8,'Red',2012,1,8,1,NULL,NULL),(9,'Shake It Off',2014,1,9,2,NULL,NULL),(10,'Someone Like You',2011,7,10,2,NULL,NULL),(11,'Power is Power',2019,3,11,2,NULL,NULL),(12,'Go Off',2017,3,12,3,NULL,NULL),(13,'Faded',2015,5,13,5,NULL,NULL),(14,'Rolling in the Deep',2011,7,10,2,NULL,NULL),(15,'We Are the Champions',2001,4,4,4,NULL,NULL),(16,'How You Like That',2020,8,14,3,NULL,NULL),(17,'Fantastic Baby',2012,9,15,2,NULL,NULL),(18,'Hello',2015,7,16,2,NULL,NULL),(19,'Skyfall',2012,7,17,2,NULL,NULL),(20,'Poker Face',2008,6,18,2,NULL,NULL),(21,'The Spectre',2017,5,19,5,NULL,NULL),(22,'Lovesick Girls',2020,8,20,5,NULL,NULL),(23,'Bad Girl',2015,10,21,2,NULL,NULL),(24,'Yeah',1995,4,22,4,NULL,NULL),(25,'Lost Control',2018,5,23,2,NULL,NULL),(26,'Bad Romance',2009,6,24,2,NULL,NULL),(27,'Pretty Savage',2020,8,20,5,NULL,NULL),(28,'Loser',2015,9,25,3,NULL,NULL),(29,'Sober',2015,9,25,3,NULL,NULL),(30,'July',2016,10,26,6,NULL,NULL),(31,'Kill This Love',2019,8,27,3,NULL,NULL),(32,'Juice',2017,10,28,3,NULL,NULL),(33,'Coupe',2018,10,29,3,NULL,NULL),(34,'Bang Bang Bang',2015,9,25,3,NULL,NULL),(35,'Telephone',2009,6,24,2,NULL,NULL);
 /*!40000 ALTER TABLE `Song` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -132,4 +133,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-03 23:01:49
+-- Dump completed on 2020-11-03 23:48:40
