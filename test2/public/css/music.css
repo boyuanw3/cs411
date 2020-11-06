@@ -316,7 +316,7 @@ input:focus {
     width: 10px;
 }
 
-/* .update-submit {
+.update-submit {
     font-size: 25px;
     color: #e9ad60;
     background: none;
@@ -328,7 +328,7 @@ input:focus {
     margin-left: 10px;
     outline: none;
     transform: translateY(2px); 
-} */
+}
 
 .update {
     color: rgb(102, 102, 102);
@@ -350,7 +350,3 @@ input:focus {
 .showUpdate {
     display: none;
 }
-/* 
-.update-submit{
-    transform: translateY(2px); 
-} */

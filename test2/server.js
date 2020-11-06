@@ -218,26 +218,34 @@ app.post('/music/delete', urlencodedParser, function (req, res) {
 
 
 
-app.post('/music/update/36', urlencodedParser, function (req, res) {
+app.post('/music/update/2', urlencodedParser, function (req, res) {
 
   var id = req.route.path.split('/')[3];
 
+  // Update year
   var year = req.body.songYear;
-  var genre = req.body.songGenre;
-  var singer = req.body.songSinger;
-  var album = req.body.songAlbum;
-
-  if (!year === '') {
-    mysqlConnection.query('update Song set Year = ' + year + ' where SongId = ' + id, function (error, result) {
-      if (error) throw error;
+  var isYearEmpty = year === '';
+  if (isYearEmpty) {
+    console.log('no year updated');
+  } else {
+    mysqlConnection.query('update Song set Year = ' + year + ' where Song_Id = ' + id, (err, result) => {
+      if (err) throw err;
       console.log("Song " + id + "'s year changed to " + year);
     })
   }
 
+  // Update genre
+  var genre = req.body.songGenre;
+  // Update singer
+  var singer = req.body.songSinger;
+  // Update album
+  var album = req.body.songAlbum;
 
 
 
-   // query the database and update the page
+
+  // query the database and update the page
+  // var songSQL = 'select Song_Id, Song_Name, Year, Singer.Singer_Name, Genre_Name, Album_Name from Song inner join Singer inner join Genre inner join Album on Song.Singer_Id = Singer.Singer_Id and Song.Genre_Id = Genre.Genre_Id and Song.Album_Id = Album.Album_Id;'
    mysqlConnection.query(songSQL, (err, data) => {
        if (err) {
            console.error(err);
