@@ -125,6 +125,12 @@ input:focus {
 
 
 
+
+/* .bottom {
+    float: left;
+} */
+
+
 .music {
     font-size: 25px;
     display: flex;
@@ -139,9 +145,18 @@ input:focus {
     text-decoration: underline;
 }
 
-.music>.music-name,
-.music>.music-year,
-.music>.music-genre,
+.music>.music-name{
+    width: 210px;
+}
+
+.music>.music-year{
+    width: 80px;
+}
+
+.music>.music-genre{
+    width: 100px;
+}
+
 .music>.music-singer{
     width: 130px;
 }
@@ -158,38 +173,77 @@ input:focus {
     width: 210px;
 }
 
-.list {
+
+
+
+
+
+
+
+.update,
+.form {
+    display: flex;
+    /* justify-content: space-between; */
+    width: 1080px;
+    /* height: 34px; */
+    margin: 0 auto;
+    /* padding-bottom: 5px; */
+    
+    margin-bottom: 5px;
+    border-bottom: 2px solid #e7e7e7;
+
+}
+
+/* .list_container {
+    float: left;
+} */
+
+.list-item {
     display: flex;
     /* justify-content: space-between; */
     width: 1080px;
     height: 34px;
     margin: 0 auto;
     /* padding-bottom: 5px; */
-    border-bottom: 2px solid #e7e7e7;
+    /* border-bottom: 2px solid #e7e7e7; */
+    border-bottom: none;
     margin-bottom: 5px;
+    float: left;
+    margin-top: 2px;
+    /* margin-right: 0; */
+    /* position: absolute;
+    left:50%; */
 
 }
 
-.list>div {
+.list-item>div {
     color: rgb(102, 102, 102);
 }
 
-.list>.item-name,
-.list>.item-year,
-.list>.item-genre,
-.list>.item-singer{
+.list-item>.item-name{
+    width: 210px;
+}
+
+.list-item>.item-year{
+    width: 80px;
+}
+.list-item>.item-genre{
+    width: 100px;
+}
+
+.list-item>.item-singer{
     width: 130px;
 }
 
-.list>.item-language{
+.list-item>.item-language{
     width: 150px;
 }
 
-.list>.item-rating{
+.list-item>.item-rating{
     width: 200px;
 }
 
-.list>.item-recommendation{
+.list-item>.item-recommendation{
     /* padding-right: 200px; */
     width: 210px;
 }
@@ -198,3 +252,105 @@ input:focus {
     height: 34px;
     line-height: 34px;
 }
+
+
+
+
+.list-operation {
+    float: right;
+    vertical-align: middle;
+    justify-content: space-between;
+    display: flex;
+}
+
+.list-operation>* {
+    margin-left: 10px;
+}
+
+.update-btn,
+.collect-btn,
+.rating-btn,
+.list_delete-btn {
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline;
+    vertical-align: middle;
+    color: #e9ad60;
+    text-align: center;
+    line-height: 1;
+    margin: 0 auto;
+    margin-left: 10px;
+    /* float: left; */
+    display: none;
+}
+
+/* .list:hover .list-item{ transform: translateX(-110px); } */
+
+.list_delete-btn:focus { outline: none; }
+.list_delete-btn:active { transform: translateY(2px); }
+.list_container:hover .list_delete-btn { display: block; }
+
+
+.update-btn:focus { outline: none; }
+.update-btn:active { transform: translateY(2px); }
+.list_container:hover .update-btn { display: block; }
+
+.collect-btn:focus { outline: none; }
+.collect-btn:active { transform: translateY(2px); }
+.list_container:hover .collect-btn { display: block; }
+
+
+.rating-btn:focus { outline: none; }
+.rating-btn:active { transform: translateY(2px); }
+.list_container:hover .rating-btn { display: block; }
+
+
+.item-id {
+    display: none;
+}
+
+
+.update-list>input {
+    width: 10px;
+}
+
+/* .update-submit {
+    font-size: 25px;
+    color: #e9ad60;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.1;
+    margin-left: 10px;
+    outline: none;
+    transform: translateY(2px); 
+} */
+
+.update {
+    color: rgb(102, 102, 102);
+    /* border-bottom: none; */
+    background-color: #f7f7f7;
+    padding: 5px 0;
+    transform: translateY(-5px);
+}
+
+.update-form>input {
+    width: 180px;
+    height: 25px;
+}
+
+.update-form>label {
+    margin: 0 15px;
+}
+
+.showUpdate {
+    display: none;
+}
+/* 
+.update-submit{
+    transform: translateY(2px); 
+} */

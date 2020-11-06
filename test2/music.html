@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/music.css">
     <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
-
+    <script src="https://kit.fontawesome.com/1e399b0f21.js" crossorigin="anonymous"></script>
     <title>Music</title>
 </head>
 <body>
@@ -58,15 +58,53 @@
 
         <div class="container">
 
-            <!-- <div class="list" id="item-0">
-                <div class="item-name clearfix">Boom</div>
-                <div class="item-year clearfix">2019</div>
-                <div class="item-genre clearfix">Hip-Hop</div>
-                <div class="item-singer clearfix">NCT Dream</div>
-                <div class="item-language clearfix">Korean</div>
-                <div class="item-rating clearfix">5.00</div>
-                <div class="item-recommendation clearfix">Kick it, Boss</div>
-            </div> -->
+
+            <div class="list" id="list-%id%">
+
+                <form class="form" method="post" action="/music/delete">
+                    <div class="list_container">
+                        <div class="list-item">
+                            <div class="item-name clearfix">%name%</div>
+                            <div class="item-year clearfix">%year%</div>
+                            <div class="item-genre clearfix">%genre%</div>
+                            <div class="item-singer clearfix">%singer%</div>
+                            <div class="item-language clearfix">%album%</div>
+                            <div class="item-rating clearfix">%avgRating%</div>
+                            <div class="item-recommendation clearfix">%recommendation%</div>
+                        </div>
+                        <div class="list-operation">
+                            <button class="list_delete-btn" name="%id%-delete"><i class="far fa-trash-alt"></i></button>
+                            <div class="update-btn"><i class="fas fa-edit"></i></div>
+                            <div class="collect-btn"><i class="far fa-heart"></i></div>
+                            <div class="rating-btn"><i class="fas fa-star-half-alt"></i></div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="update showUpdate" id="update-%id%">
+                    <div class="update-list">
+                        <form action="/music/update/%id%" method="post" class="update-form">
+                            <label for="songYear">Year:</label>
+                            <input type="text" class="update-year" name="songYear" placeholder="%year%">
+                            <label for="songGenre">Genre:</label>
+                            <input type="text" class="update-genre" name="songGenre" placeholder="%genre%">
+                            <label for="songSinger">Singer:</label>
+                            <input type="text" class="update-singer" name="songSinger" placeholder="%singer%">
+                            <label for="songAlbum">Album:</label>
+                            <input type="text" class="update-album" name="songAlbum" placeholder="%album%">
+                            <button class="update-submit" type="submit" id="update-%id%"><i class="ion-ios-checkmark-outline"></i></button>
+                        </form>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            
+           
+
+
 
             <!-- <div class="list" id="item-0">
                 <div class="item-name clearfix">Holiday</div>
@@ -83,6 +121,8 @@
         </div>
 
     </div>
+
+    
 
     <script src="./js/music.js"></script>
     <script type="text/javascript" src="./data/music"></script>

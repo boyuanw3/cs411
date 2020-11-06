@@ -15,8 +15,8 @@ const fs = require('fs');
 const mysqlConnection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "password",
-    database: "music",
+    password: "804154945pyPY^^",
+    database: "Music",
     multipleStatements:true
 })
 
@@ -28,6 +28,7 @@ mysqlConnection.connect((error) => {
     }
 })
 
+
 var songSQL = 'select Song_Id, Song_Name, Year, Singer.Singer_Name, Genre_Name, Album_Name from Song inner join Singer inner join Genre inner join Album on Song.Singer_Id = Singer.Singer_Id and Song.Genre_Id = Genre.Genre_Id and Song.Album_Id = Album.Album_Id;'
 mysqlConnection.query(songSQL, (err, data) => {
     if (err) {
@@ -35,6 +36,9 @@ mysqlConnection.query(songSQL, (err, data) => {
     } else {
         let dataToStore = JSON.stringify(data);
         fs.writeFileSync('./data/music.json', dataToStore);
+        // app.get('/data/music', function (req, res) {
+        //   res.send(data);
+        // })
     }
 })
 
@@ -142,7 +146,7 @@ app.post('/music/submit', urlencodedParser, function (req, res) {
   
   var name = req.body.name;
   var year = parseInt(req.body.year);
-  var genre =  parseInt(req.body.genre);
+  var genre =  req.body.genre;
   var singer = parseInt(req.body.singer);
   var album = req.body.album;
   var songId = fs.readFileSync('./data/music.json');
@@ -169,12 +173,111 @@ app.post('/music/submit', urlencodedParser, function (req, res) {
       } else {
           let dataToStore = JSON.stringify(data);
           fs.writeFileSync('./data/music.json', dataToStore);
+          // app.get('/data/music', function (req, res) {
+          //   let dataToStore = JSON.stringify(data);
+          //   res.send(dataToStore);
+
+          // })
       }
   })
   res.redirect('/music');
 
   
 })
+
+app.post('/music/delete', urlencodedParser, function (req, res) {
+
+  var id = Object.keys(req.body)[0].split('-')[0];
+  
+  var sql = 'delete from Song where Song_Id = ' + id;
+  
+  mysqlConnection.query(sql, function (error, result) {
+    if (error) throw error;
+    console.log("Song " + id + " deleted");
+  })
+
+    // query the database and update the page
+  var songSQL = 'select Song_Id, Song_Name, Year, Singer.Singer_Name, Genre_Name, Album_Name from Song inner join Singer inner join Genre inner join Album on Song.Singer_Id = Singer.Singer_Id and Song.Genre_Id = Genre.Genre_Id and Song.Album_Id = Album.Album_Id;'
+  mysqlConnection.query(songSQL, (err, data) => {
+      if (err) {
+          console.error(err);
+      } else {
+          let dataToStore = JSON.stringify(data);
+          fs.writeFileSync('./data/music.json', dataToStore);
+          // app.get('/data/music', function (req, res) {
+          //   let dataToStore = JSON.stringify(data);
+          //   res.send(dataToStore);
+
+          // })
+      }
+  })
+
+  res.redirect('/music');
+
+})
+
+
+
+app.post('/music/update/36', urlencodedParser, function (req, res) {
+
+  var id = req.route.path.split('/')[3];
+
+  var year = req.body.songYear;
+  var genre = req.body.songGenre;
+  var singer = req.body.songSinger;
+  var album = req.body.songAlbum;
+
+  if (!year === '') {
+    mysqlConnection.query('update Song set Year = ' + year + ' where SongId = ' + id, function (error, result) {
+      if (error) throw error;
+      console.log("Song " + id + "'s year changed to " + year);
+    })
+  }
+
+
+
+
+   // query the database and update the page
+   mysqlConnection.query(songSQL, (err, data) => {
+       if (err) {
+           console.error(err);
+       } else {
+           let dataToStore = JSON.stringify(data);
+           fs.writeFileSync('./data/music.json', dataToStore);
+       }
+   })
+
+  res.redirect('/music');
+
+})
+
+
+// const getMaxId = function () {
+//   mysqlConnection.query('select max(Song_Id) from Song;', (err, data) => {
+//     if (err) throw err;
+//     var maxId = Object.values(data[0])[0];
+//     return maxId;
+//   })
+// }
+
+// var test = getMaxId();
+
+
+// var test = setTimeout(getMaxId(), 5000);
+// console.log(test, 'test');
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

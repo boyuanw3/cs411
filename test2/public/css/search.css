@@ -124,9 +124,15 @@ form {
     text-decoration: underline;
 }
 
-.music>.music-name,
-.music>.music-year,
-.music>.music-genre,
+.music>.music-name{
+    width: 210px;
+}
+.music>.music-year{
+    width: 80px;
+}
+.music>.music-genre{
+    width: 100px;
+}
 .music>.music-singer{
     width: 130px;
 }
@@ -159,9 +165,15 @@ form {
     color: rgb(102, 102, 102);
 }
 
-.list>.item-name,
-.list>.item-year,
-.list>.item-genre,
+.list>.item-name{
+    width: 210px;
+}
+.list>.item-year{
+    width: 80px;
+}
+.list>.item-genre{
+    width: 100px;
+}
 .list>.item-singer{
     width: 130px;
 }
