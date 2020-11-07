@@ -1,1 +1,1 @@
-[{"Song_Id":11,"Song_Name":"Power is Power","Year":2019,"Singer_Id":3,"Album_Id":11,"Genre_Id":2,"Avg_Rating":null,"Recommendations":null},{"Song_Id":31,"Song_Name":"Kill This Love","Year":2019,"Singer_Id":8,"Album_Id":27,"Genre_Id":3,"Avg_Rating":null,"Recommendations":null}]
+[{"Song_Id":11,"Song_Name":"Power is Power","Year":2019,"Singer_Name":"Travis Scott","Genre_Name":"Pop","Album_Name":"Power is Power"},{"Song_Id":31,"Song_Name":"Kill This Love","Year":2019,"Singer_Name":"BlackPink","Genre_Name":"Hip Hop","Album_Name":"Kill This Love"}]

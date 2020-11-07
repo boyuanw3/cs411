@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 
 // create application/json parser
 var jsonParser = bodyParser.json()
- 
+
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
@@ -13,63 +13,63 @@ const mysql = require('mysql');
 const fs = require('fs');
 
 const mysqlConnection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "804154945pyPY^^",
-    database: "Music",
-    multipleStatements:true
+  host: "localhost",
+  user: "root",
+  password: "password",
+  database: "music",
+  multipleStatements:true
 })
 
 mysqlConnection.connect((error) => {
-    if (!error) {
-        console.log('connected');
-    } else {
-        console.log('connection Failed')
-    }
+  if (!error) {
+    console.log('connected');
+  } else {
+    console.log('connection Failed')
+  }
 })
 
 
 var songSQL = 'select Song_Id, Song_Name, Year, Singer.Singer_Name, Genre_Name, Album_Name from Song inner join Singer inner join Genre inner join Album on Song.Singer_Id = Singer.Singer_Id and Song.Genre_Id = Genre.Genre_Id and Song.Album_Id = Album.Album_Id;'
 mysqlConnection.query(songSQL, (err, data) => {
-    if (err) {
-        console.error(err);
-    } else {
-        let dataToStore = JSON.stringify(data);
-        fs.writeFileSync('./data/music.json', dataToStore);
-        // app.get('/data/music', function (req, res) {
-        //   res.send(data);
-        // })
-    }
+  if (err) {
+    console.error(err);
+  } else {
+    let dataToStore = JSON.stringify(data);
+    fs.writeFileSync('./data/music.json', dataToStore);
+    // app.get('/data/music', function (req, res) {
+      //   res.send(data);
+      // })
+  }
 })
 
 var genreSQL = 'SELECT * FROM Genre;'
 mysqlConnection.query(genreSQL, (err, data) => {
-    if (err) {
-        console.error(err);
-    } else {
-        let dataToStore = JSON.stringify(data);
-        fs.writeFileSync('./data/genre.json', dataToStore);
-    }
+  if (err) {
+    console.error(err);
+  } else {
+    let dataToStore = JSON.stringify(data);
+    fs.writeFileSync('./data/genre.json', dataToStore);
+  }
 })
 
 var singerSQL = 'SELECT * FROM Singer;'
 mysqlConnection.query(singerSQL, (err, data) => {
-    if (err) {
-        console.error(err);
-    } else {
-        let dataToStore = JSON.stringify(data);
-        fs.writeFileSync('./data/singer.json', dataToStore);
-    }
+  if (err) {
+    console.error(err);
+  } else {
+    let dataToStore = JSON.stringify(data);
+    fs.writeFileSync('./data/singer.json', dataToStore);
+  }
 })
 
 var albumSQL = 'SELECT * FROM Album;'
 mysqlConnection.query(albumSQL, (err, data) => {
-    if (err) {
-        console.error(err);
-    } else {
-        let dataToStore = JSON.stringify(data);
-        fs.writeFileSync('./data/album.json', dataToStore);
-    }
+  if (err) {
+    console.error(err);
+  } else {
+    let dataToStore = JSON.stringify(data);
+    fs.writeFileSync('./data/album.json', dataToStore);
+  }
 })
 
 
@@ -218,46 +218,92 @@ app.post('/music/delete', urlencodedParser, function (req, res) {
 
 
 
-app.post('/music/update/2', urlencodedParser, function (req, res) {
+// app.post('/music/update/2', urlencodedParser, function (req, res) {
 
-  var id = req.route.path.split('/')[3];
+//   var id = req.route.path.split('/')[3];
 
-  // Update year
-  var year = req.body.songYear;
-  var isYearEmpty = year === '';
-  if (isYearEmpty) {
-    console.log('no year updated');
-  } else {
-    mysqlConnection.query('update Song set Year = ' + year + ' where Song_Id = ' + id, (err, result) => {
-      if (err) throw err;
-      console.log("Song " + id + "'s year changed to " + year);
-    })
-  }
+//   // Update year
+//   var year = req.body.songYear;
+//   var isYearEmpty = year === '';
+//   if (isYearEmpty) {
+//     console.log('no year updated');
+//   } else {
+//     mysqlConnection.query('update Song set Year = ' + year + ' where Song_Id = ' + id, (err, result) => {
+//       if (err) throw err;
+//       console.log("Song " + id + "'s year changed to " + year);
+//     })
+//   }
 
-  // Update genre
-  var genre = req.body.songGenre;
-  // Update singer
-  var singer = req.body.songSinger;
-  // Update album
-  var album = req.body.songAlbum;
-
-
+//   // Update genre
+//   var genre = req.body.songGenre;
+//   // Update singer
+//   var singer = req.body.songSinger;
+//   // Update album
+//   var album = req.body.songAlbum;
 
 
-  // query the database and update the page
-  // var songSQL = 'select Song_Id, Song_Name, Year, Singer.Singer_Name, Genre_Name, Album_Name from Song inner join Singer inner join Genre inner join Album on Song.Singer_Id = Singer.Singer_Id and Song.Genre_Id = Genre.Genre_Id and Song.Album_Id = Album.Album_Id;'
-   mysqlConnection.query(songSQL, (err, data) => {
-       if (err) {
-           console.error(err);
-       } else {
-           let dataToStore = JSON.stringify(data);
-           fs.writeFileSync('./data/music.json', dataToStore);
-       }
-   })
 
-  res.redirect('/music');
 
-})
+//   // query the database and update the page
+//   // var songSQL = 'select Song_Id, Song_Name, Year, Singer.Singer_Name, Genre_Name, Album_Name from Song inner join Singer inner join Genre inner join Album on Song.Singer_Id = Singer.Singer_Id and Song.Genre_Id = Genre.Genre_Id and Song.Album_Id = Album.Album_Id;'
+//    mysqlConnection.query(songSQL, (err, data) => {
+//        if (err) {
+//            console.error(err);
+//        } else {
+//            let dataToStore = JSON.stringify(data);
+//            fs.writeFileSync('./data/music.json', dataToStore);
+//        }
+//    })
+
+//   res.redirect('/music');
+
+// })
+
+for (let i = 1; i < 100; i++) {
+  var directory = '/music/update/' + i;
+  app.post(directory, urlencodedParser, function (req, res) {
+
+    var id = req.route.path.split('/')[3];
+  
+    // Update year
+    var year = req.body.songYear;
+    var isYearEmpty = year === '';
+    if (isYearEmpty) {
+      console.log('no year updated');
+    } else {
+      mysqlConnection.query('update Song set Year = ' + year + ' where Song_Id = ' + id, (err, result) => {
+        if (err) throw err;
+        console.log("Song " + id + "'s year changed to " + year);
+      })
+    }
+  
+    // Update genre
+    var genre = req.body.songGenre;
+    // Update singer
+    var singer = req.body.songSinger;
+    // Update album
+    var album = req.body.songAlbum;
+  
+  
+  
+  
+    // query the database and update the page
+    // var songSQL = 'select Song_Id, Song_Name, Year, Singer.Singer_Name, Genre_Name, Album_Name from Song inner join Singer inner join Genre inner join Album on Song.Singer_Id = Singer.Singer_Id and Song.Genre_Id = Genre.Genre_Id and Song.Album_Id = Album.Album_Id;'
+     mysqlConnection.query(songSQL, (err, data) => {
+         if (err) {
+             console.error(err);
+         } else {
+             let dataToStore = JSON.stringify(data);
+             fs.writeFileSync('./data/music.json', dataToStore);
+         }
+     })
+  
+    res.redirect('/music');
+  
+  })
+  
+  
+}
 
 
 // const getMaxId = function () {
@@ -307,26 +353,60 @@ app.post('/search/detail', urlencodedParser, function (req, res) {
   var songAlbum = req.body.songAlbum;
   // console.log(songYear);
 
-  sql = 'select * from Song where Year = ' + songYear;
+  var isSongYearEmpty = songYear === '';
+  if (!isSongYearEmpty) {
+    sql = `select Song_Id, Song_Name, Year, Singer.Singer_Name, Genre_Name, Album_Name 
+          from Song inner join Singer inner join Genre inner join Album 
+          on Song.Singer_Id = Singer.Singer_Id and Song.Genre_Id = Genre.Genre_Id and Song.Album_Id = Album.Album_Id`
+    sql = sql + ' where Year = ' + songYear;
+
+    mysqlConnection.query(sql, (err, data) => {
+      if (err) {
+          console.error(err);
+      } else {
+          let dataToStore = JSON.stringify(data);
+          fs.writeFileSync('./data/search.json', dataToStore);
+      }
+    })
+  
+    
+  }
+
+  var isSongNameEmpty = songName === '';
+  console.log(isSongNameEmpty);
+  if (songName !== '') {
+    console.log(songName);
+    sql = `select Song_Id, Song_Name, Year, Singer.Singer_Name, Genre_Name, Album_Name 
+          from Song inner join Singer inner join Genre inner join Album 
+          on Song.Singer_Id = Singer.Singer_Id and Song.Genre_Id = Genre.Genre_Id and Song.Album_Id = Album.Album_Id`
+    sql = sql + ' where Song_Name =  "' + songName + '"';
+
+    mysqlConnection.query(sql, (err, data) => {
+      if (err) {
+          console.error(err);
+      } else {
+          let dataToStore = JSON.stringify(data);
+          fs.writeFileSync('./data/search.json', dataToStore);
+      }
+    })
+  
+  }
+  
+
 
   if (songName === '' && songYear === '' && songGenre === '' & songSinger === '' & songAlbum === '') {
     var sql = 'select * from Song where Song_Id = -1'
   } 
-  // else {
-  //   if (!songYear === '') {sql = template + songYear};
-  // }
-
-  // console.log(sql);
   
 
-  mysqlConnection.query(sql, (err, data) => {
-    if (err) {
-        console.error(err);
-    } else {
-        let dataToStore = JSON.stringify(data);
-        fs.writeFileSync('./data/search.json', dataToStore);
-    }
-  })
+  // mysqlConnection.query(sql, (err, data) => {
+  //   if (err) {
+  //       console.error(err);
+  //   } else {
+  //       let dataToStore = JSON.stringify(data);
+  //       fs.writeFileSync('./data/search.json', dataToStore);
+  //   }
+  // })
 
 
   res.redirect('/search');

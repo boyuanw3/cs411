@@ -4,8 +4,8 @@ const fs = require('fs');
 const mysqlConnection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "804154945pyPY^^",
-    database: "WikiMusic",
+    password: "password",
+    database: "music",
     multipleStatements:true
 })
 
