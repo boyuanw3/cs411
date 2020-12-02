@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li, a{
+    font-family: 'Commissioner', sans-serif;
+    /* font-weight: 500; */
+    /* font-size: px; */
+    color: #edf0f1;
+    text-decoration: none;
+    list-style: none;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 20px 45px ;
+    background-color: transparent;
+}
+
+.logo {
+    font-family: 'Lobster Two', cursive;
+    font-size: 35px;
+    color: transparent;
+    margin-right: auto;
+    height: 40px;
+    line-height: 40px;
+}
+
+nav {
+    list-style: none;
+    /* height: 1280px; */
+    height: 40px;
+}
+
+nav li {
+    display: inline-block;
+    padding: 0px 20px;
+    align-items: center;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    margin: 0 10px;
+    width: 100px;
+    /* height: 19px; */
+}
+
+.textbox li a:hover{
+    color: rgb(134, 78, 38);
+}
+
+.textbox li b{
+    color: rgb(134, 78, 38);
+    border-bottom: 2px solid rgb(134, 78, 38);
+    font-weight: normal;
+}
+
+body{
+    background: linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.68), rgba(0,0,0,0.68), rgba(0,0,0,0.68)), url(/img/IMG_5058.png) no-repeat;
+    /* background-color: rgb(249, 213, 134); */
+    background-size: cover;
+}
+
+.cover{
+    border: 1px solid black;
+    text-align: center;
+    width: 300px;
+    height: 450px;
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    border-radius: 8px;
+    box-shadow: 0px 0px 16px 7px;
+    opacity: 0.6;
+    /* width: fill-content; */
+}
+
+.subcover{
+    border-bottom: 1px solid none;
+    background: black;
+    width: 300px;
+    height: 450px;
+    opacity: 0.6;
+    border-radius: 0.6;
+}
+
+.coverimage img{
+    border-radius: 20px;
+    position: absolute;
+    left: 16%;
+    top: 10%;
+    /* margin: -10px -9px; */
+    opacity: 0.7;
+}
+
+.text{
+    position: absolute;
+    left: 0;
+    top: 55%;
+    right: 0;
+    margin: 0 auto;
+    /* margin-top: -2px; */
+}
+
+h1{
+    color: white;
+    font-family: 'Commissioner', sans-serif;
+    line-height: 7px;
+    /* font-weight: normal; */
+    margin-bottom: 2px;
+    font-size: 40px !important;
+    margin-top: 15px;
+}
+
+h2{
+    color: white;
+    font-family: 'Commissioner', sans-serif;
+    font-weight: normal;
+    opacity: 0.3;
+    margin-top: 15px !important;
+    font-size: 14px !important;
+}
+
+.line{
+    border-bottom: 2px solid white;
+    position: absolute;
+    top: 70%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 220px;
+    box-shadow: 1px 0px 4px;
+}
+
+.fa-circle{
+    color: rgb(134, 78, 38);
+    position: absolute;
+    left: 25%;
+    margin-top: -7px;
+}
+
+/* .number{
+
+} */
+
+h3{
+    position: absolute;
+    left: 13%;
+    /* right: 0; */
+    /* margin: 0 auto; */
+    top: 70%;
+    font-size: 14px !important;
+    color: white;
+    font-family: 'Commissioner', sans-serif;
+    font-weight: normal;
+    margin-top: 14px;
+}
+
+h4{
+    position: absolute;
+    right: 13%;
+    color: white;
+    top: 70%;
+    font-size: 14px !important;
+    font-family: 'Commissioner', sans-serif;
+    font-weight: normal;
+    margin-top: 14px;
+}
+
+.player{
+    border-bottom: 1px solid white;
+    font-size: 60px;
+}
+
+.fa-pause-circle{
+    color: rgb(134, 78, 38);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 80%;
+}
+
+.forward{
+    font-size: 35px;
+}
+
+.fa-forward{
+    color: white;
+    position: absolute;
+    /* left: 63%; */
+    right: 26%;
+    top: 83%;
+}
+
+.fa-forward:hover{
+    font-size: 40px;
+}
+
+.backward{
+    font-size: 35px;
+}
+
+.fa-backward{
+    color: white;
+    position: absolute;
+    left: 26%;
+    top: 83%;
+}
+
+.fa-backward:hover{
+    font-size: 40px;
+}
+
+.retweet{
+    font-size: 20px;
+}
+
+.fa-retweet{
+    color: rgb(134, 78, 38);
+    position: absolute;
+    top: 85%;
+    left: 15%;
+}
+
+.repeat{
+    font-size: 20px;
+}
+
+.fa-repeat{
+    color: rgb(134, 78, 38);
+    position: absolute;
+    top: 85.5%;
+    /* left: 78%; */
+    right: 15%;
+}
+
+.context{
+    position: absolute;
+    left: 45%;
+    top: 40%;
+}
+
+h5{
+    font-size: 50px;
+    color: white;
+    font-family: 'Lobster', cursive;
+    margin: 5px 0;
+    
+}
+
+h6{
+    color: white;
+    font-size: 20px;
+    margin: 10px 0;
+    font-family: 'Dancing Script', cursive;
+    width: 550px;
+    word-spacing: 5px;
+    opacity: 0.5;
+    text-align: justify;
+}
+
+.btn{
+    position: absolute;
+    left: 45%;
+    top: 55%;
+}
+
+button{
+    padding: 5px;
+    border: none;
+    /* opacity: 1; */
+    /* color: white; */
+    border-radius: 4px;
+    background-color: rgb(134, 78, 38);
+    letter-spacing: 1px;
+}
+
+button:hover{
+    background-color: rgb(102, 44, 16);
+}
+
+button a {
+    text-decoration: none;
+    color: white;
+}

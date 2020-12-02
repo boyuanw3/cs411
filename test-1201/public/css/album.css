@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+nav li, nav a {
+    font-family: 'Commissioner', sans-serif;
+    /* font-weight: 500; */
+    /* font-size: px; */
+    color: #edf0f1;
+    text-decoration: none;
+    list-style: none;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 20px 45px ;
+    background-color: #e9ad60;
+    
+    /* rgb(249, 213, 134); */
+}
+
+.logo {
+    font-family: 'Lobster Two', cursive;
+    font-size: 35px;
+    color: #fff;
+    margin-right: auto;
+    height: 40px;
+    line-height: 40px;
+}
+
+nav {
+    list-style: none;
+    /* height: 1280px; */
+    height: 40px;
+}
+
+nav li {
+    display: inline-block;
+    padding: 0px 20px;
+    align-items: center;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    margin: 0 10px;
+    width: 100px;
+    /* height: 19px; */
+}
+
+.textbox li a:hover{
+    color: rgb(134, 78, 38);
+}
+
+.textbox li b{
+    color: rgb(134, 78, 38);
+    border-bottom: 2px solid rgb(134, 78, 38);
+    font-weight: normal;
+}
+
+.title {
+    height: 80px;
+    width: 200px;
+    font-size: 50px;
+    margin: 20px auto;
+    color: #d69d00;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    
+}
+
+.album {
+    font-size: 25px;
+    display: flex;
+    /* justify-content: space-between; */
+    width: 825px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-family: 'Commissioner', sans-serif;
+    color: #e9ad60;
+
+}
+
+.album>div {
+    width: 275px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+
+/* ******************** container ******************** */
+.container {
+    width: 825px;
+    margin: 0 auto;
+}
+
+
+.list {
+    width: 825px;
+    float: left;
+}
+
+.itemAll {
+    width: 825px;
+    float: left;
+    border-bottom: solid 2px #e7e7e7;
+    padding: 5px 0;
+}
+
+.item {
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    float: left;
+}
+
+.item>div {
+    width: 275px;
+    display: flex;
+    justify-content: center;
+    color: rgb(102, 102, 102);
+}
+
+.item>.item-language {
+    width: 250px;
+    padding-left: 25px;
+}
+
+.item-operation {
+    color: #d69d00;
+    float: left;
+    size: 25px;
+    cursor: pointer;
+}
+
+.update-btn {
+    float: left;
+    display: none;
+}
+
+.itemAll:hover .update-btn { display: block; }
+.update-btn:active {transform: translateY(2px);}
+
+
+/* *********** update form ********** */
+.item-update-all {
+    display: flex;
+    width: 825px;
+    background-color: #f7f7f7;
+    border-bottom: solid 2px #e7e7e7;
+}
+
+.item-update {
+    width: 925px;
+    height: 39px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+}
+
+.item-update>label {
+    /* margin: 5px 10px; */
+    color: rgb(102, 102, 102);
+    padding: 0 5px;
+    padding-top: 5px;
+    
+}
+
+.item-update>input {
+    margin: 0 20px;
+    padding: 5px 10px;
+    border: 1px solid #e7e7e7;
+    border-radius: 1px;
+    width: 180px;
+}
+
+.update-submit-btn {
+    outline: none;
+    background: none;
+    border: none;
+    font-size: 25px;
+    color: #e9ad60;
+    padding-top: 1px;
+}
+
+.update-submit-btn:active { transform: translateY(2px); }
+
+.showUpdate {display: none;}

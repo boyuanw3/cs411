@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/music.css">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/1e399b0f21.js" crossorigin="anonymous"></script>
+    <title>Music</title>
+</head>
+<body>
+
+    <div class="navigation">
+
+        <div class="logo">WikiMusic</div>
+
+        <nav>
+
+            <ul class="textbox">
+                <li><a href="/">Home</a></li>
+                <li><a href="/music"><b>Music</b></a></li>
+                <li><a href="/genre">Genre</a></li>
+                <li><a href="/singer">Singer</a></li>
+                <li><a href="/album">Album</a></li>
+                <li><a href="/search">Search</a></li>
+                <li><a href="/profile">Profile</a></li>
+            </ul>
+
+        </nav>
+            
+        
+    </div>
+
+    <div class="title">Music</div>
+
+    <div class="add">
+        <form class="add_container" method="post" action="/music/submit">
+            <input type="text" class="add_name" placeholder="Name" name="name" id="name">
+            <input type="number" class="add_year" placeholder="Year" name="year" id="year">
+            <input type="text" class="add_genre" placeholder="Genre" name="genre" id="genre">
+            <input type="text" class="add_singer" placeholder="Singer" name="singer" id="singer">
+            <input type="text" class="add_language" placeholder="Album" name="album" id="album">
+            <button class="add_btn" type="submit"><i class="ion-ios-checkmark-outline"></i></button>
+        </form>
+    </div>
+
+    <div class="bottom">
+
+        <div class="music">
+            <div class="music-name">Name</div>
+            <div class="music-year">Year</div>
+            <div class="music-genre">Genre</div>
+            <div class="music-singer">Singer</div>
+            <div class="music-language">Album</div>
+            <div class="music-rating">Average Rating</div>
+            <!-- <div class="music-recommendation">Recommendations</div> -->
+        </div>
+
+        <div class="container">
+
+
+            <!-- <div class="list" id="list-%id%">
+
+                
+                <div class="itemAll">
+                    
+                    <div class="item">
+                        <div class="item-name clearfix">%name%</div>
+                        <div class="item-year clearfix">%year%</div>
+                        <div class="item-genre clearfix">%genre%</div>
+                        <div class="item-singer clearfix">%singer%</div>
+                        <div class="item-language clearfix">%album%</div>
+                        <div class="item-rating clearfix">%avgRating%</div>
+                    </div>
+                    
+                    <div class="item-operation">
+                        
+                        <form action="/music/delete" method="POST" class="delete-form operation-form">
+                            <button class="list_delete-btn" name="%id%-delete"><i class="far fa-trash-alt"></i></button>
+                        </form>
+
+                        <form class="update-form operation-form">
+                            <div class="update-btn"><i class="fas fa-edit"></i></div>
+                        </form>
+                        
+                        
+                        <form action="/music/collect/%id%" method="POST" class="collect-form operation-form">
+                            <button class="collect-btn" name="%id%-collect"><i class="far fa-heart"></i></button>
+                        </form>
+                    </div>
+
+
+                </div>
+
+                <div class="update showUpdate" id="update-%id%">
+                    <div class="update-list">
+
+                        <form action="/music/update/%id%" method="post" class="update-form">
+                            <label for="songYear">Year:</label>
+                            <input type="text" class="update-year" name="songYear" placeholder="%year%">
+                            <label for="songGenre">Genre:</label>
+                            <input type="text" class="update-genre" name="songGenre" placeholder="%genre%">
+                            <label for="songSinger">Singer:</label>
+                            <input type="text" class="update-singer" name="songSinger" placeholder="%singer%">
+                            <label for="songAlbum">Album:</label>
+                            <input type="text" class="update-album" name="songAlbum" placeholder="%album%">
+                            <button class="update-submit-btn" type="submit" id="update-%id%"><i class="ion-ios-checkmark-outline"></i></button>
+                        </form>
+                        
+                        <form action="/music/rate/%id%" method="POST" class="rate-form">
+                            <label for="songRating">Rating:</label>
+                            <input type="text" class="update-rating" name="songRating">
+                            <button class="update-submit-btn" type="submit" id="rate-%id%"><i class="ion-ios-checkmark-outline"></i></button>
+                        </form>
+
+                    </div>
+                </div>
+
+
+
+            </div> -->
+
+            
+           
+
+
+
+            <!-- <div class="list" id="item-0">
+                <div class="item-name clearfix">Holiday</div>
+                <div class="item-year clearfix">2017</div>
+                <div class="item-genre clearfix">Pop</div>
+                <div class="item-singer clearfix">Girl's Generation</div>
+                <div class="item-language clearfix">Korean</div>
+                <div class="item-rating clearfix">5.00</div>
+                <div class="item-recommendation clearfix">Lion Heart, All Night</div>
+            </div> -->
+
+            
+
+        </div>
+
+    </div>
+
+    
+
+    <script src="./js/music.js"></script>
+    <script type="text/javascript" src="./data/music"></script>
+</body>
+</html>

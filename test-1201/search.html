@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/search.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="navigation">
+
+        <div class="logo">WikiMusic</div>
+
+        <nav>
+
+            <ul class="textbox">
+                <li><a href="/">Home</a></li>
+                <li><a href="/music">Music</a></li>
+                <li><a href="/genre">Genre</a></li>
+                <li><a href="/singer">Singer</a></li>
+                <li><a href="/album">Album</a></li>
+                <li class="searchLink"><a href="/search"><b>Search</b></a></li>
+                <li><a href="/profile">Profile</a></li>
+            </ul>
+
+        </nav>
+            
+        
+    </div>
+
+    <div class="mainTitle">Search</div>
+
+    <!-- <div class="search"> -->
+
+        <!-- <div class="searchSong">
+            <div class="searchSong title">Song</div>
+
+            <form method="post" action="/search/detail">
+                
+                <label for="songName">Song: </label>
+                <input type="text" name="songName" id="songName">
+
+                <label for="songYear">Year: </label>
+                <input type="number" name="songYear" id="songYear">
+
+                <label for="songGenre">Genre: </label>
+                <input type="text" name="songGenre" id="songGenre">
+
+                <label for="songSinger">Singer: </label>
+                <input type="text" name="songSinger" id="songSinger">
+
+                <label for="songAlbum">Album: </label>
+                <input type="text" name="songAlbum" id="songAlbum">
+                <button class="search_btn song_btn" type="submit">Search</button>
+
+                
+            </form>
+
+        </div> -->
+
+
+        <!-- <div class="searchGenre" method="post" action="/search/detail">
+            <div class="searchGenre title">Genre</div>
+
+            <form method="post" action="/search/detail">
+                
+                <label for="genreName">Genre: </label>
+                <input type="text" name="genreName" id="genreName">
+
+                <label for="genreYear">Origin Year: </label>
+                <input type="number" name="genreYear" id="genreYear">
+
+                <label for="genreCountry">Origin Country: </label>
+                <input type="text" name="genreCountry" id="genreCountry">
+                <button class="search_btn" type="submit">Search</button>
+                
+            </form>
+
+        </div> -->
+
+
+        <!-- <div class="searchSinger" method="post" action="/search/detail">
+            <div class="searchSinger title">Singer</div>
+
+            <form method="post" action="/search/detail">
+                
+                <label for="singerName">Singer: </label>
+                <input type="text" name="singerName" id="singerName">
+
+                <label for="singerGender">Gender: </label>
+                <input type="text" name="singerGender" id="singerGender">
+
+                <label for="singerDebutYear">Debut Year: </label>
+                <input type="number" name="singerDebutYear" id="singerDebutYear">
+                <button class="search_btn" type="submit">Search</button>
+                
+            </form>
+
+        </div> -->
+
+
+        <!-- <div class="searchAlbum" method="post" action="/search/detail">
+            <div class="searchAlbum title">Album</div>
+
+            <form method="post" action="/search/detail">
+                
+                <label for="albumName">Album: </label>
+                <input type="text" name="albumName" id="albumName">
+
+                <label for="albumSinger">Singer: </label>
+                <input type="text" name="albumSinger" id="albumSinger">
+
+                <label for="albumLanguage">Language: </label>
+                <input type="text" name="albumLanguage" id="albumLanguage">
+                <button class="search_btn" type="submit">Search</button>
+                
+            </form>
+
+        </div> -->
+
+        
+
+
+
+    <!-- </div> -->
+
+
+
+
+
+    <div class="search">
+        
+
+
+        <form action="/search/test" method="post">
+
+            <div class="searchSong">
+                <div class="title">
+                    Song:
+                </div>
+                <div class="searchInputs">
+                    <label for="songName">Name:</label>
+                    <input type="text" class="searchInput" name="songName" id="songName">
+
+                    <label for="songYear">Year:</label>
+                    <input type="number" class="searchInput" name="songYear" id="songYear">
+
+                    <label for="songGenre">Genre:</label>
+                    <input type="text" class="searchInput" name="songGenre" id="songGenre">
+
+                    <label for="song">Singer:</label>
+                    <input type="text" class="searchInput" name="songSinger" id="songSinger">
+
+                    <label for="song">Album:</label>
+                    <input type="text" class="searchInput" name="songAlbum" id="songAlbum">
+
+                </div>
+            </div>
+
+            <div class="searchGenre">
+                <div class="title">
+                    Genre:
+                </div>
+                <div class="searchInputs">
+                    <label for="genreName">Name:</label>
+                    <input type="text" class="searchInput" name="genreName" id="genreName">
+
+                    <label for="genreYear">Origin Year:</label>
+                    <input type="number" class="searchInput" name="genreYear" id="genreYear">
+
+                    <label for="genreCountry">Origin Country:</label>
+                    <input type="text" class="searchInput" name="genreCountry" id="genreCountry">
+
+                </div>
+            </div>
+
+            <div class="searchSinger">
+                <div class="title">
+                    Singer:
+                </div>
+                <div class="searchInputs">
+                    <label for="singerName">Name:</label>
+                    <input type="text" class="searchInput" name="singerName" id="singerName">
+
+                    <label for="singerGender">Gender:</label>
+                    <input type="text" class="searchInput" name="singerGender" id="singerGender">
+
+                    <label for="singerDebutYear">Debut Year:</label>
+                    <input type="number" class="searchInput" name="singerDebutYear" id="singerDebutYear">
+
+
+                </div>
+            </div>
+
+            <div class="searchAlbum">
+                <div class="title">
+                    Album:
+                </div>
+                <div class="searchInputs">
+                    <label for="albumName">Name:</label>
+                    <input type="text" class="searchInput" name="albumName" id="albumName">
+
+                    <label for="albumSinger">Singer:</label>
+                    <input type="text" class="searchInput" name="albumSinger" id="albumSinger">
+
+                    <label for="albumLanguage">Language:</label>
+                    <input type="text" class="searchInput" name="albumLanguage" id="albumLanguage">
+
+
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn" formaction="/search/song">Search Song</button>
+            <button type="submit" class="submit-btn" formaction="/search/genre">Search Gender</button>
+            <button type="submit" class="submit-btn" formaction="/search/singer">Search Singer</button>
+            <button type="submit" class="submit-btn" formaction="/search/album">Search Album</button>
+        </form>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="bottom">
+
+        <!-- <div class="music">
+            <div class="music-name">Name</div>
+            <div class="music-year">Year</div>
+            <div class="music-genre">Genre</div>
+            <div class="music-singer">Singer</div>
+            <div class="music-language">Album</div>
+            <div class="music-rating">Average Rating</div>
+        </div>
+
+        <div class="container">
+
+            <div class="list music-list" id="item-%id%">
+                <div class="item-name clearfix">%name%</div>
+                <div class="item-year clearfix">%year%</div>
+                <div class="item-genre clearfix">%genre%</div>
+                <div class="item-singer clearfix">%singer%</div>
+                <div class="item-language clearfix">%album%</div>
+                <div class="item-rating clearfix">%avgRating%</div>
+            </div>
+
+            <div class="list music-list" id="item-%id%">
+                <div class="item-name clearfix">%name%</div>
+                <div class="item-year clearfix">%year%</div>
+                <div class="item-genre clearfix">%genre%</div>
+                <div class="item-singer clearfix">%singer%</div>
+                <div class="item-language clearfix">%album%</div>
+                <div class="item-rating clearfix">%avgRating%</div>
+            </div>
+
+        </div> -->
+
+
+
+
+
+
+        <!-- <div class="genre">
+            <div class="genre-name">Genre</div>
+            <div class="genre-year">Origin Year</div>
+            <div class="genre-country">Origin Country</div>
+
+        </div>
+
+        <div class="genreContainer">
+
+            <div class="genreList" id="item-%id%">
+                <div class="item-name clearfix">%name%</div>
+                <div class="item-year clearfix">%year%</div>
+                <div class="item-country clearfix">%country%</div>
+            </div>
+            <div class="genreList" id="item-%id%">
+                <div class="item-name clearfix">%name%</div>
+                <div class="item-year clearfix">%year%</div>
+                <div class="item-country clearfix">%country%</div>
+            </div>
+            <div class="genreList" id="item-%id%">
+                <div class="item-name clearfix">%name%</div>
+                <div class="item-year clearfix">%year%</div>
+                <div class="item-country clearfix">%country%</div>
+            </div>
+
+
+        </div> -->
+
+
+
+
+
+
+
+        <!-- <div class="singer">
+            
+            <div class="singer-name">Name</div>
+            <div class="singer-gender">Gender</div>
+            <div class="singer-year">Debut Year</div>
+            
+        </div>
+
+        <div class="singerContainer">
+
+            <div class="singerList" id="item-%id%">
+                <div class="singer-name">%name%</div>
+                <div class="singer-gender">%gender%</div>
+                <div class="singer-year">%year%</div>
+            </div>
+
+            <div class="singerList" id="item-%id%">
+                <div class="singer-name">%name%</div>
+                <div class="singer-gender">%gender%</div>
+                <div class="singer-year">%year%</div>
+            </div>
+
+            <div class="singerList" id="item-%id%">
+                <div class="singer-name">%name%</div>
+                <div class="singer-gender">%gender%</div>
+                <div class="singer-year">%year%</div>
+            </div>
+
+
+            
+        </div> -->
+
+
+
+        <!-- <div class="album">
+            <div class="album-name">Album</div>
+            <div class="album-singer">Singer</div>
+            <div class="album-language">Language</div>
+
+        </div>
+
+        <div class="albumContainer">
+
+            <div class="albumList" id="item-0">
+                <div class="item-name">%name%</div>
+                <div class="item-singer">%year%</div>
+                <div class="item-language">%language%</div>
+            </div>
+            
+            <div class="albumList" id="item-0">
+                <div class="item-name">%name%</div>
+                <div class="item-singer">%year%</div>
+                <div class="item-language">%language%</div>
+            </div>
+
+            <div class="albumList" id="item-0">
+                <div class="item-name">%name%</div>
+                <div class="item-singer">%year%</div>
+                <div class="item-language">%language%</div>
+            </div>
+
+        </div> -->
+
+        
+
+    </div>
+
+
+    <script src="./js/search.js"></script>
+    <script type="text/javascript" src="./data/search"></script>
+
+</body>
+</html>
